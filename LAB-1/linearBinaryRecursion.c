@@ -62,7 +62,7 @@ int main()
             end1 = clock();
             cpu_time_used1 = (double)(end1 - start1) / CLOCKS_PER_SEC;
             (result == -1) ? printf("Element is not present in array\n") : printf("Element is present at index %d\n", result);
-            printf("time used: %f %d %d\n", cpu_time_used1, start1, end1);
+            printf("time used: %f\n", cpu_time_used1);
         }
 
         else if (choice == 2)
