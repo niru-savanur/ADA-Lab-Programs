@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 gcd(int a, int b){
     if (a == 0)
         return b;

@@ -1,3 +1,6 @@
+#include<stdio.h>
+#include <stdlib.h>
+
 void towerOfHanoi(int n, char s, char t, char d){
     if(n<1){
         printf("Not possible!");
