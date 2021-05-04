@@ -111,7 +111,7 @@ int main()
 
                 // x = rand() % 100;
                 x = -1;
-                printf("\searching for %d\n", x);
+                printf("\nsearching for %d\n", x);
                 start2 = clock();
                 result = recBinarySearch(arr, 0, n - 1, x);
                 
