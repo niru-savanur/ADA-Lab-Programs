@@ -6,7 +6,7 @@ double cpu_time_used1, cpu_time_used2;
 int c, d;
 
 int numsArray[12] = {1000, 2000, 5000, 8000, 10000, 15000, 20000, 25000, 30000, 40000, 45000, 50000};
-int numsArray2[12] = {1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 10000, 15000, 20000};
+
 
 int recLinearSearch(int arr[], int l, int r, int x)
 {
@@ -87,8 +87,8 @@ int main()
         {
             for (l = 0; l < 12; l++)
             {
-                printf("number of elements - %d\n", numsArray2[l]);
-                n = numsArray2[l];
+                printf("number of elements - %d\n", numsArray[l]);
+                n = numsArray[l];
                 int arr[n];
                 printf("Generating array......\n");
                 for (int k = 1; k <= n; k++)
