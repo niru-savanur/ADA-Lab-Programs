@@ -3,8 +3,10 @@
 #include <time.h>
 clock_t start1, start2, end1, end2;
 double cpu_time_used1, cpu_time_used2;
+int c, d;
 
 int numsArray[12] = {1000, 2000, 5000, 8000, 10000, 15000, 20000, 25000, 30000, 40000, 45000, 50000};
+int numsArray2[12] = {1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 10000, 15000, 20000};
 
 int recLinearSearch(int arr[], int l, int r, int x)
 {
@@ -14,6 +16,10 @@ int recLinearSearch(int arr[], int l, int r, int x)
         return l;
     if (arr[r] == x)
         return r;
+    
+    for (d = 1; d <= 10000; d++)
+    {
+    }
     return recLinearSearch(arr, l + 1, r - 1, x);
 }
 
@@ -21,6 +27,9 @@ int recBinarySearch(int arr[], int l, int r, int x)
 {
     if (r >= l)
     {
+        for (d = 1; d <= 50000; d++)
+        {
+        }
         int mid = l + (r - l) / 2;
 
         if (arr[mid] == x)
@@ -38,7 +47,7 @@ int recBinarySearch(int arr[], int l, int r, int x)
 int main()
 {
 
-    int result, k, choice, n, x, j, a, i, c, d, l;
+    int result, k, choice, n, x, j, a, i, l;
     while (1)
     {
         printf("1:rec linear search\n2:rec binary search\n 3: stop\n");
@@ -47,23 +56,24 @@ int main()
         if (choice == 1)
         {
             for(l = 0; l < 12; l++){
-                printf("number of elements - %d", numsArray[l]);
+                printf("number of elements - %d\n", numsArray[l]);
                 n = numsArray[l];
                 int arr[n];
+                printf("Generating array......\n");
                 for (int k = 1; k <= n; k++)
                 {
                     arr[k] = rand() % 100;
                     
                 }
-                printf("\nenter element to be found\n");
-                scanf("%d", &x);
+                printf("array generated!\n");
+                // x = rand() % 100;
+                x = -1;
+                printf("\searching for %d\n", x);
                 start1 = clock();
                 result = recLinearSearch(arr, 0, n - 1, x);
-                for (c = 1; c <= 20000; c++)
-                    for (d = 1; d <= 20000; d++)
-                    {
-                    }
+                
                 end1 = clock();
+                printf("search finish\n");
                 cpu_time_used1 = (double)(end1 - start1) / CLOCKS_PER_SEC;
                 (result == -1) ? printf("Element is not present in array\n") : printf("Element is present at index %d\n", result);
                 printf("time used: %f\n", cpu_time_used1);
@@ -77,9 +87,10 @@ int main()
         {
             for (l = 0; l < 12; l++)
             {
-                printf("number of elements - %d", numsArray[l]);
-                n = numsArray[l];
+                printf("number of elements - %d\n", numsArray2[l]);
+                n = numsArray2[l];
                 int arr[n];
+                printf("Generating array......\n");
                 for (int k = 1; k <= n; k++)
                 {
                     arr[k] = rand() % 100;
@@ -96,16 +107,17 @@ int main()
                         }
                     }
                 }
-                
-                printf("\nenter element to be found\n");
-                scanf("%d", &x);
+                printf("array generated!\n");
+
+                // x = rand() % 100;
+                x = -1;
+                printf("\searching for %d\n", x);
                 start2 = clock();
                 result = recBinarySearch(arr, 0, n - 1, x);
-                for (c = 1; c <= 20000; c++)
-                    for (d = 1; d <= 20000; d++)
-                    {
-                    }
+                
+                    
                 end2 = clock();
+                printf("search finish\n");
                 cpu_time_used2 = (double)(end2 - start2) / CLOCKS_PER_SEC;
                 (result == -1) ? printf("Element is not present in array\n") : printf("Element is present at index %d\n", result);
                 printf("time used: %f\n", cpu_time_used2);
