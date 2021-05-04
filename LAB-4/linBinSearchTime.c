@@ -68,7 +68,7 @@ int main()
                 printf("array generated!\n");
                 // x = rand() % 100;
                 x = -1;
-                printf("\searching for %d\n", x);
+                printf("\nsearching for %d\n", x);
                 start1 = clock();
                 result = recLinearSearch(arr, 0, n - 1, x);
                 
