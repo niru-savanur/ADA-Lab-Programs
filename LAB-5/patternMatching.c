@@ -5,7 +5,7 @@ int match_pattern(char text[], char pattern[]){
     int i, n, m, j;
     n = strlen(text);
     m = strlen(pattern);
-    for(i = 0; i < n - m; i++){
+    for(i = 0; i <= n - m; i++){
         j = 0;
         while(j < m && text[i+j] == pattern[j])
             j++;
