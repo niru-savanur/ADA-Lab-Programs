@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int a[10][10], p[10][10], i, j, k, n;
+int c[10][10], d[10][10], i, j, k, n;
 
 int min(int a, int b)
 {
@@ -26,7 +26,7 @@ void floyds()
 
         {
 
-            p[i][j] = a[i][j];
+            d[i][j] = c[i][j];
         }
     }
 
@@ -41,7 +41,7 @@ void floyds()
             for (j = 1; j <= n; j++)
 
             {
-                p[i][j] = min(p[i][j], p[i][k] + p[k][j]);
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
             }
         }
     }
@@ -65,7 +65,7 @@ void main()
 
         {
 
-            scanf("%d", &a[i][j]);
+            scanf("%d", &c[i][j]);
         }
     }
 
@@ -81,7 +81,7 @@ void main()
 
         {
 
-            printf("%d\t", p[i][j]);
+            printf("%d\t", d[i][j]);
         }
 
         printf("\n");
